@@ -66,7 +66,7 @@ docker compose up --build
 | Service | URL |
 |---------|-----|
 | Frontend | https://containerized-inventory-order-manag-orcin.vercel.app/ |
-| Backend API | http://localhost:5000 |
+| Backend API | https://containerized-inventory-order-manag-cyan.vercel.app/ |
 | MongoDB | mongodb://localhost:27017 |
 
 ## Environment Variables
