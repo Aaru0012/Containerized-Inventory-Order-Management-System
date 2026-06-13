@@ -20,9 +20,7 @@ services:
       retries: 5
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: aryanvermaa/inventory-backend:latest
     container_name: inventory_backend
     restart: always
     environment:
@@ -34,9 +32,7 @@ services:
         condition: service_healthy
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: aryanvermaa/inventory-frontend:latest
     container_name: inventory_frontend
     restart: always
     ports:

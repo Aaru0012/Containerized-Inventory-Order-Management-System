@@ -1,11 +1,11 @@
 # Containerized Inventory & Order Management System
 
 ![Docker](https://img.shields.io/badge/Docker-Containerized-blue)
-![Node.js](https://img.shields.io/badge/Node.js-Backend-green)
+![Python](https://img.shields.io/badge/Python-Backend-3776ab)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB)
-![MongoDB](https://img.shields.io/badge/MongoDB-Database-success)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791)
 
-A full-stack inventory and order management system built with React, Node.js, Express, and MongoDB, fully containerized using Docker and Docker Compose.
+A full-stack inventory and order management system built with React, FastAPI, Python, and PostgreSQL, fully containerized using Docker and Docker Compose.
 
 ## Overview
 
@@ -25,12 +25,10 @@ This project helps businesses manage products, inventory, and customer orders th
 | Layer | Technology |
 |---------|------------|
 | Frontend | React, Axios, CSS |
-| Backend | Node.js, Express |
-| Database | MongoDB |
+| Backend | Python, FastAPI, Uvicorn |
+| Database | PostgreSQL |
 | Containerization | Docker, Docker Compose |
-
-## Project Structure
-
+| Registry | Docker Hub |
 ```text
 Containerized-Inventory-Order-Management-System/
 │
@@ -55,27 +53,38 @@ git clone https://github.com/Aaru0012/Containerized-Inventory-Order-Management-S
 cd Containerized-Inventory-Order-Management-System
 ```
 
-### Run with Docker
+### Run with Docker Compose
 
 ```bash
-docker compose up --build
+docker compose up
+```
+
+### Pull Pre-built Images from Docker Hub
+
+```bash
+docker pull aryanvermaa/inventory-backend:latest
+docker pull aryanvermaa/inventory-frontend:latest
 ```
 
 ## Services
 
 | Service | URL |
 |---------|-----|
-| Frontend | https://containerized-inventory-order-manag-orcin.vercel.app/ |
-| Backend API | https://containerized-inventory-order-manag-cyan.vercel.app/ |
-| MongoDB | mongodb://localhost:27017 |
+| Frontend | http://localhost:3000 |
+| Backend API | http://localhost:8000 |
+| PostgreSQL | postgresql://localhost:5432 |
+| Docker Hub Backend | https://hub.docker.com/r/aryanvermaa/inventory-backend |
+| Docker Hub Frontend | https://hub.docker.com/r/aryanvermaa/inventory-frontend |
 
 ## Environment Variables
 
-Create a `.env` file inside the backend directory:
+Create a `.env` file in the root directory:
 
 ```env
-MONGO_URI=mongodb://mongo:27017/inventorydb
-PORT=5000
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=inventory_db
+DATABASE_URL=postgresql://postgres:postgres@db:5432/inventory_db
 ```
 
 ## API Endpoints
