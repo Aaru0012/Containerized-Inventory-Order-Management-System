@@ -65,7 +65,7 @@ docker compose up --build
 
 | Service | URL |
 |---------|-----|
-| Frontend | http://localhost:3000 |
+| Frontend | https://containerized-inventory-order-manag-orcin.vercel.app/ |
 | Backend API | http://localhost:5000 |
 | MongoDB | mongodb://localhost:27017 |
 
